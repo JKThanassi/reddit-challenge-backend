@@ -40,7 +40,7 @@ def test_get_posts_from_sub_error_no_posts(mock_requests):
 @mock.patch.object(requests, "get")
 def test_get_posts_from_sub(mock_requests):
 
-    with open("redditpost.json") as rp:
+    with open("test/redditpost.json") as rp:
         ret_json = json.load(rp)
         mock_requests.return_value = mock.Mock(status_code=200, json=lambda: ret_json)
         res = get_posts_from_sub("askreddit")
@@ -58,7 +58,7 @@ def test_strip_superflous():
         "redditLink": "https://www.reddit.com/r/AskReddit/comments/l2d1la/at_921_tonight_it_will_be_the_21st_minute_of_the/",
         "submitter": "FilthyMcNasty108",
     }
-    with open("redditpost.json") as rp:
+    with open("test/redditpost.json") as rp:
         post = json.load(rp)
         assert stripped_post == strip_superfluous(post.get("data").get("children")[0])
 

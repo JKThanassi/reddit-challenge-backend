@@ -52,7 +52,11 @@ where:
 3. Once that is complete, run pipenv shell to activate the generated virtualenv 
 4. To get the dev server up and running
    - In the root directory of the project run `export FLASK_APP=api.py`
-   - Then run `flask run` or `python -m flask run` within the pip shell 
+   - Then run `flask run` or `python -m flask run` within the pip shell
+5. Running tests
+    - In the root directory of the project and within the pipenv shell
+        - run `pytest test/*.py`
+        - The paths to files get funky and will cause tests to fail unless run in this way.
 
 ### Using pyenv to install python 3.8.1
 1. Install pyenv
